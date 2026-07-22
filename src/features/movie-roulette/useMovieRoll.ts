@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import type { Movie } from "../../types";
 
 const API_KEY = "79d0bf33-8a2c-4189-9828-0405083cf2d5";
@@ -49,7 +49,7 @@ const useMovieRoll = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [movie, setMovie] = useState<Movie | null>(null);
 
-  const rollMovie = async () => {
+  const rollMovie = useCallback(async () => {
     if (isLoading) return;
 
     setIsLoading(true);
@@ -92,7 +92,7 @@ const useMovieRoll = () => {
     } finally {
       setIsLoading(false)
     }
-  };
+  }, [isLoading]);
 
   return { isLoading, movie, rollMovie };
 };

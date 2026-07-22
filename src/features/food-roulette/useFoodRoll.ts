@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 const useFoodRoll = (itemCount: number) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
 
-  function roll() {
+  const roll = useCallback(() => {
     if (isSpinning) return;
 
     setIsSpinning(true);
@@ -21,7 +21,7 @@ const useFoodRoll = (itemCount: number) => {
         setIsSpinning(false)
       }
     }, 100);
-  }
+  }, [isSpinning, itemCount])
 
   return {selectedIndex, isSpinning, roll}
 };

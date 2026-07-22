@@ -28,7 +28,7 @@ const MovieRoulette = () => {
         {movie && !isLoading && (
           <div className="absolute inset-0 flex flex-col">
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
+              className="absolute inset-0 bg-cover bg-center opacity-100 mix-blend-overlay"
               style={{ backgroundImage: `url(${movie.imageUrl})` }}
             ></div>
 
