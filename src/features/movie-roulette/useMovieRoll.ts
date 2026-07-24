@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import type { Movie } from "../../types";
 
-const API_KEY = "79d0bf33-8a2c-4189-9828-0405083cf2d5";
+const API_KEY = "ТВОЙ_ТОКЕН_СЮДА";
 
 const MOCK_MOVIES: Movie[] = [
   {

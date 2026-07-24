@@ -1,32 +1,70 @@
-# React + TypeScript + Vite
+👀 Preview
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+💡 About
 
-Currently, two official plugins are available:
+An interactive React application designed to solve the eternal question: "What are we doing tonight?" It features a randomizer for choosing both movies and food delivery, built with React, TypeScript, and styled with Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Features ✨
 
-## React Compiler
+Movie Roulette: Randomly selects a top-rated movie for your date night.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Food Roulette: Randomly chooses a food delivery category (Pizza, Sushi, Burgers, etc.) with a fun spinning animation.
 
-## Expanding the Oxlint configuration
+Smart Loading States: Handles asynchronous API requests with clean loading UI.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Optimized Performance: Uses React.memo and useCallback to prevent unnecessary re-renders.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+FSD Architecture: Clean code structure utilizing Feature-Sliced Design principles.
+
+Responsive UI: Styled beautifully with Tailwind CSS for all screens.
+
+🌐 API Used
+
+This project uses the Kinopoisk API Unofficial to fetch movie data:
+
+https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES
+
+The API provides:
+
+Movie titles (Original & Russian)
+
+High-quality poster URLs
+
+Release years
+
+Kinopoisk / IMDb ratings
+
+Note: You need to provide your own API key in src/features/movie-roulette/useMovieRoll.ts to fetch real data.
+
+Tech Stack 🛠
+
+React – UI components
+
+TypeScript – Strict typing for reliable code
+
+Tailwind CSS – Utility-first styling
+
+Vite – Fast development server and bundler
+
+Custom Hooks – Clean separation of business logic
+
+Installation & Run ⚙️
+
+Clone the repository:
+``` bash
+git clone https://github.com/whymikey/date-night-roulette
+cd date-night-roulette
+
+npm install
+
+```  
+Setup your API Key:
+
+Get a free token from Kinopoisk API Unofficial.
+
+Open src/features/movie-roulette/useMovieRoll.ts and replace "ТВОЙ_ТОКЕН_СЮДА" with your actual API key.
+
+Start the development server:
+``` bash
+npm run dev
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
